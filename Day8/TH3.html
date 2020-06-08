@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Luyện tập với cấu trúc if..else..if</title>
 </head>
 <body>
-$END$
+<script>
+    let userName= prompt("Who's there", '');
+    if (userName == 'Admin') {
+        let pass= prompt("Your password:");
+        if (pass == 'TheMaster') {
+            alert('Welcome!');
+        } else if (pass == null) {
+            alert('Canceled.');
+        } else {
+            alert('Wrong password');
+        }
+    } else if (userName == null){
+        alert('Canceled');
+    }else {
+        alert("I don't know you");
+    }
+</script>
 </body>
 </html>
