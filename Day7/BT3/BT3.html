@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td colspan="2"><input type="text" id="number1" ></td>
+            <td colspan="2"><input type="text" id="number2" ></td>
+        </tr>
+        <tr>
+            <td id="Add"><button type="button" onclick="showSum()">+</button></td>
+            <td id="Sub"><button type="button" onclick="showDiff()">-</button></td>
+            <td id="Multi"><button type="button" onclick="showMul()">*</button></td>
+            <td id="Di"><button type="button" onclick="showQuo()">/</button></td>
+        </tr>
+    </table>
+</form>
+<div id="show"></div>
+<script>
+function showSum() {
+    let a= +document.getElementById('number1').value;
+    let b= +document.getElementById('number2').value;
+    let sum= a + b;
+    document.getElementById('show').innerHTML="Result Division: " + sum;
+}
+function showDiff() {
+    let a= +document.getElementById('number1').value;
+    let b= +document.getElementById('number2').value;
+    let diff= a - b;
+    document.getElementById('show').innerHTML="Result Division: " + diff;
+}
+function showMul() {
+    let a= +document.getElementById('number1').value;
+    let b= +document.getElementById('number2').value;
+    let mul= a * b;
+    document.getElementById('show').innerHTML="Result Division: " + mul;
+}
+function showQuo() {
+    let a= +document.getElementById('number1').value;
+    let b= +document.getElementById('number2').value;
+    let quo= a / b;
+    document.getElementById('show').innerHTML="Result Division: " + quo;
+}
+</script>
+</body>
+</html>
