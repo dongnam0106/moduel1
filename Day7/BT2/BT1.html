@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+<form>
+    <table>
+    <tr>
+        <th>Amount</th>
+        <th>From Curency</th>
+        <th>To Curency</th>
+    </tr>
+        <tr>
+        <td>
+            <input type="text" name="Nhập" id="number">
+        </td>
+    <td>
+        <select>
+        <<option id="USA">America</option>
+            </select>
+    </td>
+            <td>
+                <select>
+                <option id="VN">VietNam</option>
+            </select>
+            </td>
+        <td>
+            <button type="button" onclick="showResult();">Convert</button>
+        </td>
+        </tr>
+    </table>
+    <div id="prin"></div>
+</form>
+<script>
+    function showResult() {
+        let a= document.getElementById("number").value;
+        let b= a * 23000;
+        document.getElementById('prin').innerHTML="Result: "+ b + "VND";
+    }
+</script>
+</body>
+</html>
