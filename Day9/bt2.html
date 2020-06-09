@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>câu lệch swicth-case</title>
+</head>
+<body>
+    <input type="text" id="month">
+    <input type="button" onclick="showResult()" value="Tính số ngày"><br>
+    <div id="show"></div>
+    <script>
+
+        function showResult() {
+            let nhap = document.getElementById("month").value;
+            switch (nhap) {
+                case "1":
+                case "3":
+                case "5":
+                case "7":
+                case "8":
+                case "10":
+                case "12":
+                    document.getElementById("show").innerText="Tháng " + nhap + " có 31 ngày";
+                break;
+                case "4":
+                case "6":
+                case "9":
+                case "11":
+                    document.getElementById("show").innerText="Tháng " + nhap + " có 30 ngày";
+                break;
+                case "2":
+                    document.getElementById("show").innerText="Tháng " + nhap + "   có 28 hoặc 29 ngày";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
