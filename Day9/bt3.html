@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+    <!-- <script src="calculator.js"></script> -->
+</head>
+<body>
+<form>
+<table>
+    <tr>
+        <td colspan="4"><input type="text" id="out" name="display" disabled></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="one" id="one" value="1" onclick="out.value+=this.value"></td>
+        <td><input type="button" name="two" id="two" value="2" onclick="out.value+=this.value"></td>
+        <td><input type="button" name="three" id="three" value="3" onclick="out.value+=this.value"></td>
+        <td><input type="button" name="plus" id="plus" onclick="out.value+=this.value" value="+"></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="four" id="four" value="4" onclick="out.value+=this.value"></td>
+        <td><input type="button" name="five" id="five" value="5" onclick="out.value+=this.value"></td>
+        <td><input type="button" name="six" id="six" value="6" onclick="out.value+=this.value"></td>
+        <td><input type="button" name="minus" id="minus" value="-" onclick="out.value+=this.value"></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="seven" id="seven" value="7" onclick="out.value+=this.value"></td>
+        <td><input type="button" name="eight" id="eight" value="8" onclick="out.value+=this.value"></td>
+        <td><input type="button" name="nine" id="nine" value="9" onclick="out.value+=this.value"></td>
+        <td><input type="button" name="mul" id="mul" value="*" onclick="out.value+=this.value"></td>
+    </tr>
+    <tr>
+        <td><input type="button" name="clear" id="clear" value="C" onclick="out.value= ''"></td>
+        <td><input type="button" name="zero" id="zero" value="0" onclick="out.value+=this.value"></td>
+        <td><input type="button" name="result" id="result" value="=" onclick="out.value=eval(out.value)"></td>
+        <td><input type="button" name="dis" id="dis" value="/" onclick="out.value+=this.value"></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
