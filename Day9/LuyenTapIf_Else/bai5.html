@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Học lực</title>
+</head>
+<body>
+<script>
+    let pTest= parseFloat(prompt('Điểm kiểm tra:'));
+    let pHalf= parseFloat(prompt('Điểm giữa kì:'));
+    let pLast= parseFloat(prompt('Điểm cuối kì:'));
+    let avg= (pTest + pHalf*2 + pLast*3)/6;
+    if (avg>=8){
+        alert('Học sinh giỏi');
+    } else if (avg>=6){
+        alert('Học sinh khá');
+    } else ('Học sinh trung bình')
+</script>
+</body>
+</html>
