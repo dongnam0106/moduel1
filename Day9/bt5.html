@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DoYouLoveMe?</title>
+</head>
+<body>
+<div>
+<h1>Do you love me?</h1>
+<input type="button" value="YES" onclick="showMes()"/>
+<input type="button" value="NO" id="dont" onmouseover="dontClick()"/>
+</div>
+<script>
+    function showMes() {
+        alert('<3');
+    }
+    let buttonObj=null;
+    buttonObj=document.getElementById('dont');
+    function init() {
+        buttonObj=document.getElementById('dont');
+        buttonObj.style.position= 'absolute';
+        buttonObj.style.left= '60px';
+        buttonObj.style.top= '81px';
+    }
+    function dontClick(){
+        let rd=(Math.random()*100)-20;
+        buttonObj.style.left = parseFloat(buttonObj.style.left) + rd + 'px';
+        buttonObj.style.top = parseFloat(buttonObj.style.top)+ rd + 'px';
+    }
+    window.onload = init();
+</script>
+</body>
+</html>
