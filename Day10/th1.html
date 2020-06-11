@@ -15,11 +15,13 @@
     }
     document.getElementById("demo").innerHTML = text;
 
-    let num= prompt("Enter your number: ");
+    let num= +prompt("Enter your number: ");
     let total = 0;
-    for(let i= 0; i<= num; i++);
-    total = total + i;
-    alert(total);
+    let e= 1;
+    for(; e<= num; e+=1) {
+        total = total + e;
+    }
+        alert(total);
 </script>
 </body>
 </html>
