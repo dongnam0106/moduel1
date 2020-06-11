@@ -44,3 +44,7 @@ function  changeImg4(e) {
         n = 0;
     }
 }
+
+if (changeImg(image1[n])==changeImg1(image1[n])){
+    alert('a')
+}
