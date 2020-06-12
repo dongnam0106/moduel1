@@ -62,7 +62,7 @@ function  changeImg4(e) {
 }
 
 function checkImg() {
-    if (check1==check2==check3==check4==check5){
+    if (check1==check2 && check2==check3 && check3==check4 && check4==check5){
     //if(image1 == '../images/first1.jpg' && image2 == '../images/two1.jpg' && image3 == '../images/three1.jpg' && image4 == '../images/four1.jpg' && image5 == '../images/five1.jpg'){
     document.getElementById("show").innerHTML= "verygood";
 
