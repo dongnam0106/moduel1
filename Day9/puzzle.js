@@ -4,7 +4,7 @@ let image2;
 let image3;
 let image4;
 let image5;
-
+let check1, check2, check3, check4, check5;
 function  changeImg(e) {
     n++;
     image1="../images/first"+n+".jpg";
@@ -13,6 +13,7 @@ function  changeImg(e) {
     if(n>=3){
         n = 0;
     }
+    check1 = n;
     checkImg();
 }
 function  changeImg1(e) {
@@ -23,6 +24,7 @@ function  changeImg1(e) {
     if(n>=3){
         n = 0;
     }
+    check2 =n;
     checkImg();
 }
 function  changeImg2(e) {
@@ -33,6 +35,7 @@ function  changeImg2(e) {
     if(n>=3){
         n = 0;
     }
+    check3 = n;
     checkImg();
 }
 function  changeImg3(e) {
@@ -43,6 +46,7 @@ function  changeImg3(e) {
     if(n>=3){
         n = 0;
     }
+    check4 = n;
     checkImg();
 }
 function  changeImg4(e) {
@@ -53,11 +57,14 @@ function  changeImg4(e) {
     if(n>=3){
         n = 0;
     }
+    check5 = n;
     checkImg();
 }
 
 function checkImg() {
-    if(image1 == '../images/first1.jpg' && image2 == '../images/two1.jpg' && image3 == '../images/three1.jpg' && image4 == '../images/four1.jpg' && image5 == '../images/five1.jpg'){
-        alert('a')
+    if (check1==check2==check3==check4==check5){
+    //if(image1 == '../images/first1.jpg' && image2 == '../images/two1.jpg' && image3 == '../images/three1.jpg' && image4 == '../images/four1.jpg' && image5 == '../images/five1.jpg'){
+    document.getElementById("show").innerHTML= "verygood";
+
     }
 }
