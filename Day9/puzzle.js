@@ -1,50 +1,63 @@
 let n = 0;
+let image1;
+let image2;
+let image3;
+let image4;
+let image5;
+
 function  changeImg(e) {
     n++;
-    let image1="../images/first"+n+".jpg";
+    image1="../images/first"+n+".jpg";
     console.log(e);
     e.src = image1;
     if(n>=3){
         n = 0;
     }
+    checkImg();
 }
 function  changeImg1(e) {
     n++;
-    let image1="../images/two"+n+".jpg";
+    image2="../images/two"+n+".jpg";
     console.log(e);
-    e.src = image1;
+    e.src = image2;
     if(n>=3){
         n = 0;
     }
+    checkImg();
 }
 function  changeImg2(e) {
     n++;
-    let image1="../images/three"+n+".jpg";
+    image3="../images/three"+n+".jpg";
     console.log(e);
-    e.src = image1;
+    e.src = image3;
     if(n>=3){
         n = 0;
     }
+    checkImg();
 }
 function  changeImg3(e) {
     n++;
-    let image1="../images/four"+n+".jpg";
+    image4="../images/four"+n+".jpg";
     console.log(e);
-    e.src = image1;
+    e.src = image4;
     if(n>=3){
         n = 0;
     }
+    checkImg();
 }
 function  changeImg4(e) {
     n++;
-    let image1="../images/five"+n+".jpg";
+    image5="../images/five"+n+".jpg";
     console.log(e);
-    e.src = image1;
+    e.src = image5;
     if(n>=3){
         n = 0;
     }
+    checkImg();
 }
 
-if (changeImg(image1[n])==changeImg1(image1[n])){
-    alert('a')
+function checkImg() {
+    if(image1 == '../images/first1.jpg' && image2 == '../images/two1.jpg' && image3 == '../images/three1.jpg' && image4 == '../images/four1.jpg' && image5 == '../images/five1.jpg'){
+        alert('a')
+    }
 }
