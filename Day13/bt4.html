@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<form>
+    <input type="text" id="search">
+    <input type="button" value="Search" onclick="searchEl()"><br/>
+    <p id="show"></p>
+</form>
+<script>
+    function searchEl() {
+    let nhap= document.getElementById('search').value;
+    let aEnglish=["yes", "no", "hello", "thanks"];
+    let aVietnam=["có", "không", "xin chào", "cảm ơn"];
+    let e= 0;
+    if (nhap == aEnglish[e]) {
+        document.getElementById('show').innerHTML = nhap + " có nghĩa là: " + aVietnam[e];
+    } else {
+        document.getElementById('show').innerHTML = "Không tìm thấy";
+    }
+}
+</script>
+</body>
+</html>
