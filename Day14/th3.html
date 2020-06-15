@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm min trong mảng</title>
+</head>
+<body>
+<script>
+    function minArr(arr) {
+        let i;
+        if (arr.length==0){
+            return -1;
+        }
+        let min= arr[0];
+        for(i=0; i<arr.length; i++){
+            if(arr[i]<min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+    let arr1= [4,2,7,-1,87,34,2];
+    let min = minArr(arr1);
+    alert("Số nhỏ nhất là " + min + " vị trí: " + i);
+</script>
+</body>
+</html>
