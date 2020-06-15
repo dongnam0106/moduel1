@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố <10000</title>
+</head>
+<body>
+<script>
+    function check(a) {
+        let kt= true;
+        for  (let i=2; i<=Math.sqrt(a); i++){
+            if (a%i==0){
+                kt= false;
+                break;
+            }
+        }
+        return kt;
+    }
+    let result = "<p>";
+    let count = 0;
+    let x=2;
+    while (x<10000){
+        if (check(x)){
+            result=result+x+" ";
+            count++;
+        }
+        x++;
+    }
+    result=result+"<p>";
+    document.write(result);
+</script>
+</body>
+</html>
