@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Feet -> Meters</h3>
+<p>
+    <label>Feet</label>
+    <input id="inputFeed" type="number" placeholder="Feet"
+    oninput="lengthConverter1(this.value)">
+</p>
+<p>Meters: <span id="outputMeters"></span></p>
+<h3>Meters -> Feed</h3>
+<p>
+    <label>Meters</label>
+    <input id="inputMeters" type="number" placeholder="Meters"
+           oninput="lengthConverter2(this.value)">
+</p>
+<p>Feet: <span id="outputFeet"></span></p>
+<script>
+    function lengthConverter1(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputMeters").innerHTML= valNum*0.305
+    }
+    function lengthConverter2(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputFeet").innerHTML= valNum*3.279
+    }
+</script>
+</body>
+</html>
