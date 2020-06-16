@@ -11,16 +11,17 @@
     <p id="show"></p>
 </form>
 <script>
-    function searchEl() {
-    let nhap= document.getElementById('search').value;
     let aEnglish=["yes", "no", "hello", "thanks"];
     let aVietnam=["có", "không", "xin chào", "cảm ơn"];
-    let e= 0;
-    if (nhap == aEnglish[e]) {
-        document.getElementById('show').innerHTML = nhap + " có nghĩa là: " + aVietnam[e];
-    } else {
-        document.getElementById('show').innerHTML = "Không tìm thấy";
+    function searchEl() {
+    let nhap= document.getElementById('search').value;
+    let result= "không tìm thấy";
+    for(let i=0; i<aEnglish.length; i++) {
+        if (nhap == aEnglish[i]) {
+            result= aVietnam[i]
+        }
     }
+        document.getElementById('show').innerHTML= result;
 }
 </script>
 </body>
