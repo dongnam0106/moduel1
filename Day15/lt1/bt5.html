@@ -6,20 +6,18 @@
 </head>
 <body>
 <script>
-    arr1= ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
-    arr2= ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
     let inputStar = prompt("Nhập: ");
-    let i;
-    function starArr() {
-        for (i = 0; i < arr1.length; i++) {
-            if (inputStar === arr1[i]) {
-                document.write("Ngôi sao " + arr1[i] + ", " + "chòm sao " + arr2[i]);
-            } else {
-                document.write("Không tìm thấy!");
+    function starArr(a) {
+        let arr1= ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arr2= ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let result= "Không tìm thấy";
+        for(let i = 0; i < arr1.length; i++)
+            if (a == arr1[i]) {
+                result = document.write( "Ngôi sao " + arr1[i] + ", "+ "chòm sao " + arr2[i]);
             }
-        }
+        document.write(result);
     }
-    starArr();
+    starArr(inputStar);
 </script>
 </body>
 </html>
