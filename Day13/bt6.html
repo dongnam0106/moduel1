@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Faking textarea on Typing</title>
 </head>
-<body>
-$END$
+<body align="center">
+<h1>Type anthing slowly</h1>
+<textarea cols="50" rows="15" id="troll" onkeydown="keyEven();"></textarea>
+<script>
+    let arr= ["","B","ạ","n"," ","l","à"," ","a","i","?"];
+    let result="";
+    function keyEven() {
+        let inputText= document.getElementById("troll").value;
+        let textSize= inputText.length;
+        if(textSize> 0) {
+            for(let i=1; i<= textSize; i++){
+                result += arr[i];
+                if(i == 11){
+                    document.getElementById("troll").value= "";
+                    result= "";
+                }
+            }
+        }
+        document.getElementById("troll").value= result;
+        result= "";
+        setTimeout("keyEven()", 1);
+    }
+</script>
 </body>
 </html>
