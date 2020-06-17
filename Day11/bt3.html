@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+</head>
+<body>
+<input type="button" value="Chơi" onclick="inputNum();">
+<script>
+    function  inputNum(){
+        let num1= +prompt("Nhập số bắt đầu: ");
+        let num2= +prompt("Nhập số kết thúc: ");
+        let result= Math.floor(Math.random()*(num2-num1+1))+ num1;
+        console.log(result);
+        let playerOfNum= +prompt("Nhập số muốn đoán: ")
+        if (result == playerOfNum){
+            alert("True")
+        } else {
+            alert("False")
+        }
+    }
+</script>
+</body>
+</html>
