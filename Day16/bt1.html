@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1520px" height="700px" style="border:1px solid red"></canvas>
+<script>
+    function Rectangle(x,y,width,height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+    function getRandomHex(){
+        return Math.floor(Math.random()*255);
+    }
+
+    function getRandomColor() {
+        var red = getRandomHex();
+        var green = getRandomHex();
+        var blue = getRandomHex();
+        return "rgb(" + red + "," + blue + "," + green + ")";
+    }
+    let perimeter;
+    let dientich;
+    function createRectangle() {
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        var width = Math.floor(Math.random()*100);
+        var height = Math.floor(Math.random()*100);
+        var rectangle = new Rectangle(30,30,width,height);
+        var color = getRandomColor();
+        ctx.beginPath();
+        ctx.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        ctx.fillStyle= color;
+        ctx.fill();
+        perimeter= (width+height)*2;
+        dientich= width*height;
+    }
+    createRectangle();
+    alert("Chu vi hình chữ nhật: "+perimeter);
+    alert("Diện tích hình chữ nhật: "+dientich);
+</script>
+</body>
+</html>
