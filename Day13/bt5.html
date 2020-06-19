@@ -3,53 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <title>Tic tac toe</title>
+    <style>
+        *{
+            margin: 0px auto;
+            padding: 5px;
+        }
+        table{
+            color: blue;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        table td{
+            text-align: center;
+            vertical-align: middle;
+            font-size: 15px;
+            border: 1px solid black;
+            width:15px;
+            height: 15px;
+        }
+    </style>
 </head>
-<body>
+<body onload="drawBoardGame(20)">
+<div id="gameboard">
+
+</div>
 <h3>Caro Game</h3>
-<p id="carogame"/>
-<input type="button" value="Player1" onclick="changeValue(this.value)">
-<input type="button" value="Player2" onclick="changeValue(this.value)">
 <script>
-    let b = document.getElementById("carogame");
-
-    let board = [];
-    let data = "";
-    for (let i = 0; i < 20; i++) {
-        board[i] = new Array();
-        for (let j = 0; j < 20 ; j++) {
-            board[i][j]= ".";
-        }
-    }
-
-    for (let i = 0; i < 20; i++) {
-        data += "<br/>";
-        for (let j = 0; j < 20; j++) {
-            data += board[i][j] + "&nbsp;&nbsp;&nbsp;";
-        }
-    }
-    data += "<br/><br/><input type='button' value='Player1' onclick='changeValue(this.value)'>"
-    data += "<br/><br/><input type='button' value='Player2' onclick='changeValue(this.value)'>"
-    b.innerHTML = data;
-    let xx, xy;
-    let ox, oy;
-    function changeValue(value) {
-        let positionX = prompt("X: ");
-        let positionY = prompt("Y: ");
-        data = "";
-        if (value == "Player1") {
-            board[positionX][positionY] = "x";
-        } else {
-            board[positionX][positionY] = "O";
-        }
-        for (let i = 0; i < 20; i++) {
-            data += "<br/>";
-            for (let j = 0; j < 20; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+    let listGame=[];
+    function drawBoardGame(size){
+        let game="<table>";
+        for(i=0;i<size;i++){
+            game+="<tr>";
+            listGame[i]=[];
+            for(j=0;j<size;j++){
+                game+="<td onclick='changeStatus(this,"+i+","+j+");'>&nbsp;</td>";
+                listGame[i][j]=-1;
             }
+            game+="</tr>";
         }
-        data += "<br/><br/><input type='button' value='Player1' onclick='changeValue(this.value)'>"
-        data += "<br/><br/><input type='button' value='Player2' onclick='changeValue(this.value)'>"
-        b.innerHTML = "<hr/>" + data;
+        game+="</table>";
+        document.getElementById("gameboard").innerHTML=game;
+    }
+    let status='X';
+    function changeStatus(cell,xPos,yPos){
+        cell.innerHTML=status;
+        if(status=='X'){
+            listGame[xPos][yPos]=0;
+            status='O';
+        }
+        else{
+            listGame[xPos][yPos]=1;
+            status='X';
+        }
+        checkWin(xPos,yPos);
+    }
+    function checkWin(xPos,yPos){
+        console.log(listGame);
+        let countNgang=1;
+        let countDoc=1;
+        let countCheoTrai=1;
+        let countCheoPhai=1;
+        let i=xPos;
+        let j=yPos;
+        let valueOfCell=listGame[xPos][yPos];
+        while(listGame[i][j+1]==valueOfCell){
+            countNgang++;
+            confirmWinner(countNgang,5);
+            j++;
+        }
+        i=xPos;
+        j=yPos;
+        while(listGame[i][j-1]==valueOfCell){
+            countNgang++;
+            confirmWinner(countNgang,5);
+            j--;
+        }
+
+        i=xPos;
+        j=yPos;
+        while(listGame[i+1][j]==valueOfCell){
+            countDoc++;
+            confirmWinner(countDoc,5);
+            i++;
+        }
+
+        i=xPos;
+        j=yPos;
+        while(listGame[i-1][j]==valueOfCell){
+            countDoc++;
+            confirmWinner(countDoc,5);
+            i--;
+        }
+
+        i=xPos;
+        j=yPos;
+        while(listGame[i-1][j-1]==valueOfCell){
+            countCheoTrai++;
+            confirmWinner(countCheoTrai,5);
+            j--;
+            i--;
+        }
+
+        i=xPos;
+        j=yPos;
+        while(listGame[i+1][j+1]==valueOfCell){
+            countCheoPhai++;
+            confirmWinner(countCheoPhai,5);
+            j++;
+            i++;
+        }
+
+        i=xPos;
+        j=yPos;
+        while(listGame[i+1][j-1]==valueOfCell){
+            countCheoPhai++;
+            confirmWinner(countCheoPhai,5);
+            j--;
+            i++;
+        }
+
+        i=xPos;
+        j=yPos;
+        while(listGame[i-1][j+1]==valueOfCell){
+            countCheoTrai++;
+            confirmWinner(count,5);
+            j++;
+            i--;
+        }
+    }
+    function confirmWinner(count,number){
+        if(count==number){
+            alert("You are winner!");
+            return;
+        }
     }
 </script>
 </body>
