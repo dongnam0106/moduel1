@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển câu chuyện của Eva và Adam</title>
+</head>
+<body>
+<script>
+    function Apple(weight) {
+        this.weight = weight;
+
+        this.decrease = function () {
+            this.weight -= 1;
+        }
+        this.isEmpty = function () {
+            if (this.weight == 0) {
+                return true;
+            }
+            return false;
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+    }
+    function Human(name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+
+        this.isMale = function () {
+            return true;
+        }
+        this.setGender = function () {
+            this.gender = gender;
+        }
+        this.checkApple = function () {
+            if (!this.Apple.isEmpty()) {
+                return true;
+            }
+            return false;
+        }
+        this.setApple = function (Apple) {
+            this.Apple = Apple;
+        }
+        this.eat = function () {
+            if (this.checkApple()) {
+                this.weight += 1;
+                this.Apple.decrease();
+            } else {
+                alert("Apple is empty!");
+            }
+        }
+        this.say = function (String) {
+            console.log(String);
+        }
+        this.getName = function () {
+            return this.name;
+        }
+        this.setName = function () {
+            this.name = name;
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.setWeight = function () {
+            this.weight = weight;
+        }
+    }
+
+    let apple = new Apple(10);
+    let Adam = new Human ('Adam', this.gender, 60);
+    let Eva = new Human ('Eva', this.gender, 45);
+    Adam.setApple(apple);
+    Eva.setApple(apple);
+    do {
+        Adam.say('Ăn đê');
+        Eva.say('Ok! Ăn ngay!');
+        Eva.eat();
+        Eva.say('Ăn đê');
+        Adam.eat();
+        alert("Cân nặng của Adam: " + Adam.getWeight());
+        alert("Cân nặng của Eva: " + Eva.getWeight());
+        alert("Cân nặng của táo còn: " + apple.getWeight());
+
+    } while (!apple.isEmpty());
+</script>
+</body>
+</html>
