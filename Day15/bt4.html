@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    function isPalindrome(s) {
+        for (let i = 0, j= s.length; i<s.length, j>=i; i++, j--){
+            if (s[i]===s[j]){
+                return true;
+            }
+        }
+        return false;
+    }
+    let inputStr= prompt("Nhập: ");
+    let result = isPalindrome(inputStr);
+    if (result === true){
+        alert("Palindrome");
+    } else {
+        alert("Not palindrome");
+    }
+</script>
+</body>
+</html>
