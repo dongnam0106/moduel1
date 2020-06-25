@@ -1,0 +1,18 @@
+table{
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    border: 1px solid black;
+
+}
+
+td{
+    width: 140px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.i11 {
+    width: 140px;
+    height: 100px;
+}
