@@ -3,6 +3,8 @@ var backGround = function (game) {
         this.image = null;
         this.loaded = false;
 
+        var self = this;
+
         this.init = function () {
             this.loadImage();
         }
@@ -21,6 +23,10 @@ var backGround = function (game) {
         }
 
         this.draw = function () {
-
+            console.log('drawing bg');
+            if(this.loaded == false){
+                return;
+            }
+            self.game.context.drawImage(this.image,0,0);
         }
 }
