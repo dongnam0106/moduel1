@@ -6,6 +6,7 @@ let game = function(){
     this.tiger           = null;
     this.resourceLoaded = false;
     this.score          = 0;
+    this.img = null;
 
     let self = this;
 
@@ -38,14 +39,19 @@ let game = function(){
     };
 
     this.update = function(){
-        this.updateAllBirds();
-    };
-
-    this.updateAllBirds = function(){
-        for (let i = 0; i < bird.length; i++){
-            this.bird.update;
+       // this.updateAllBirds();
+        for(let i = 0; i< this.canvas.height; i++){
+            if (this.y<700){
+                y+=10*i;
+            }
         }
     };
+
+    // this.updateAllBirds = function(){
+    //     for (let i = 0; i < bird.length; i++){
+    //         this.bird.update;
+    //     }
+    // };
 
     this.draw = function(){
         self.context.fillStyle = "#E16DE3";
