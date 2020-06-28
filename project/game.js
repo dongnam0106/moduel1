@@ -39,19 +39,19 @@ let game = function(){
     };
 
     this.update = function(){
-       // this.updateAllBirds();
-        for(let i = 0; i< this.canvas.height; i++){
-            if (this.y<700){
-                y+=10*i;
-            }
-        }
+       this.updateAllBirds();
+        // for(let i = 0; i< this.canvas.height; i++){
+        //     if (this.y<700){
+        //         y+=10*i;
+        //     }
+        // }
     };
 
-    // this.updateAllBirds = function(){
-    //     for (let i = 0; i < bird.length; i++){
-    //         this.bird.update;
-    //     }
-    // };
+    this.updateAllBirds = function(){
+        for (let i = 0; i < bird.length; i++){
+            this.bird[i].update();
+        }
+    };
 
     this.draw = function(){
         self.context.fillStyle = "#E16DE3";
