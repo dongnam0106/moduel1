@@ -1,46 +1,96 @@
+let game = function(){
+    this.canvas         = null;
+    this.context        = null;
+    this.resource       = null;
+    this.bird           = [];
+    this.tiger           = null;
+    this.resourceLoaded = false;
+    this.score          = 0;
 
-var game = function () {
-    this.canvas = null;
-    this.width = 500;
-    this.height = 700;
+    let self = this;
 
-    this.bird= null;
-    this.bg = null;
+    this.init = function(){
+        this.canvas        = document.createElement('canvas');
+        this.canvas.width  = 500;
+        this.canvas.height = 700;
+        this.context       = this.canvas.getContext('2d');
 
-    var self = this;
-
-    this.init = function () {
-        this.canvas = document.createElement('canvas');
-        this.context = this.canvas.getContext('2d');
-        this.canvas.width = this.width;
-        this.canvas.height = this.height;
         document.body.appendChild(this.canvas);
 
-        this.bird = new bird(this);
-        this.bird.init();
+        this.resource = new resource(this);
+        this.resource.load();
 
-        this.bg = new backGround(this);
-        this.bg.init();
+        this.tiger = new tiger(this);
+        this.tiger.init();
 
+        setInterval(self.createNewBird, 1500);
+
+    };
+
+    this.start = function(){
         this.loop();
-    }
+    };
 
-    this.loop = function () {
+    this.loop = function(){
         self.update();
         self.draw();
-        setInterval(self.loop, 33);
+        setTimeout(self.loop, 10);
+    };
+
+    this.update = function(){
+        this.updateAllBirds();
+    };
+
+    this.updateAllBirds = function(){
+        for (let i = 0; i < bird.length; i++){
+            this.bird.update;
+        }
+    };
+
+    this.draw = function(){
+        self.context.fillStyle = "#E16DE3";
+        self.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+        if (self.resourceLoaded == false){
+            self.drawLoading();
+        }
+        else {
+            self.drawTheWorld();
+        }
+    };
+
+    this.createNewBird = function(){
+        if (self.resourceLoaded){
+            let newBird = new bird(self);
+            newBird.init();
+            self.bird.push(newBird);
+        }
+    };
+
+    this.drawTheWorld = function(){
+        self.drawScore();
+        self.tiger.draw();
+        self.drawAllBird();
+    };
+
+    this.drawAllBird = function(){
+        // lặp qua từng quả trứng
+        for (let i = 0; i < this.bird.length; i++){
+            this.bird[i].draw();
+        }
+    };
+
+
+    this.drawLoading = function(){
+        self.context.fillStyle = '#ffffff';
+        self.context.font = '30px Arial';
+        self.context.fillText('Loading...', 100, 100);
+    };
+
+    this.drawScore = function(){
+        self.context.fillStyle = '#ffffff';
+        self.context.font = '30px Arial';
+        self.context.fillText('Score: ' + this.score, 150, 200);
     }
 
-    this.update = function () {
-        this.bird.update();
-        this.bg.update();
-    }
-    this.draw = function () {
-        this.bird.draw();
-        this.bg.draw();
-    }
-
-}
-
-var g = new game();
-g.init();
+};
