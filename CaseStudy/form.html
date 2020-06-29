@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8"/>
+    <h1>C0520K1</h1>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Nguyễn Đông Nam</title>
+    <script src="event.js"></script>
+</header>
+<body>
+<p align="right">
+    <input type="button" value="Back" id="b1" onclick="history.back()">
+</p>
+<form>
+
+    <p>
+        <label><span>Số học viên:</span>
+            <input id="StudyNumber" type="text" name="number" placeholder="X000" maxlength="4" pattern="[A-Z]{1}[0-9]{3}"
+                   title="1 chữ cái và 3 số" required>
+        </label>
+    </p>
+    <p>
+        <label><span>Họ và tên:</span>
+            <input id="StudyName" type="text" name="name" placeholder="Username" maxlength="30" required>
+        </label>
+    </p>
+    <p>
+        <label><span>Mật khẩu:</span>
+            <input id="StudyPass" type="password" name="password" maxlength="20" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,20}"
+                   title="Nhập mật khẩu gồm chữ in hoa và số!" required>
+        </label>
+    </p>
+    <p>
+        <label><span>Email：</span>
+            <input id="StudyEmail" type="email" name="email" maxlength="30" placeholder="aaa@bbbb.com"
+                   title="aaaa@bbbb.com"required>
+        </label>
+    </p>
+    <p>
+        <label>
+            <span>Giới tính</span>
+            <span class="radio">
+                    <label><input required checked name="gender" type="radio" value="Nam">Nam</label>
+                    <label><input required name="gender" type="radio" value="Nữ">Nữ</label>
+                </span>
+        </label>
+    </p>
+    <p>
+        <label>
+            <span>Quốc gia:</span>
+            <select name="nationality" required>
+                <option value="vietnam">Việt Nam</option>
+                <option value="japan">Nhật Bản</option>
+                <option value="america">Mỹ</option>
+                <option value="thailand">Thái</option>
+                <option value="dailoan">Đài Loan</option>
+                <option value="trungquoc">Trung Quốc</option>
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>
+            <span>Ngày sinh:</span>
+            <input type="date" name="date"
+                   min="1970-04-01" max="2002-04-30" required>
+        </label>
+    </p>
+    <p>
+        <label>
+            <span>Màu bạn yêu thích:</span>
+            <span>
+                    <input type="color" name="color" list="colorType" value="#000000" required>
+                    <datalist id="colorType">
+                        <option value="#000000"></option>
+                        <option value="#FF0000"></option>
+                        <option value="#00FFFF"></option>
+                    </datalist>
+                </span>
+        </label>
+    </p>
+    <p>
+        <input type="submit" value="submit" onclick="getLocal();">
+        <input type="reset" value="reset">
+    </p>
+</form>
+</body>
+</html>
