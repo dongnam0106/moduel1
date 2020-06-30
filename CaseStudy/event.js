@@ -19,17 +19,9 @@ function getLocal() {
             }
         }
 
-    let color = document.getElementById("colorType");
-
     localStorage.Date = document.getElementById("birthday").value;
     console.log(document.getElementById("birthday").value);
 
-    for (let i = 0; i< select.length; i++){
-        // if (color[i].selected){
-        //     localStorage.Color = color[i].value;
-        //     console.log(color[i]);
-        // }
-    }
 }
 localStorage.getItem('Number');
 localStorage.getItem('Name');
