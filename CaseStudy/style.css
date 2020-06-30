@@ -1,10 +1,13 @@
+body {
+    background-image: url("imgs/background.jpg");
+}
 input:invalid{
     color: red;
 }
 h1{
-    font-size: 1.5em;
+    font-size: 3em;
     font-family: serif;
-    color: #C08B9B;
+    color: black;
     text-align: center;
 }
 
@@ -12,7 +15,7 @@ form{
     color:#666;
     padding: 7px;
     margin-bottom: 15px;
-    border: 3px solid #EEE9ED;
+    border: 3px solid white;
     border-radius: 15px;
 }
 
@@ -20,29 +23,27 @@ form p{
     margin: 7px 0 0;
     padding: 10px;
     font-size: 12px;
-    background: #EEE9ED;
+    background: #cccccc;
     border-radius: 15px;
     overflow: hidden;
     clear: left;
 }
 
-form p:first{
-    margin: 0;
-}
-
-form p:last-child{
+form div:last-child{
     text-align: center;
 }
 
 span{
-    width: 8em;
+    width: 30em;
     margin: 0px;
     display: block;
     float:left;
+    color: black;
+    font-size: 20px;
 }
 
 form p label input, .txtfiled, form p select{
-    width: 16em;
+    width: 20em;
     padding: 3px;
     margin: 0px;
     color: #666;
@@ -81,8 +82,8 @@ form p span.radio label:hover{
     font-weight: bold;
 }
 
-form p [type="submit"],
-form p [type="reset"],
+form div [type="submit"],
+form div [type="reset"],
 form p [type="button"],
 body p [type="button"]{
     cursor: pointer;

@@ -2,7 +2,7 @@
 <html>
 <header>
     <meta charset="UTF-8"/>
-    <h1>C0520K1</h1>
+    <h1>[CODEGYM]_C0520K1</h1>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Nguyễn Đông Nam</title>
     <script src="event.js"></script>
@@ -14,24 +14,26 @@
 <form>
 
     <p>
-        <label><span>Số học viên:</span>
-            <input id="StudyNumber" type="text" name="number" placeholder="X000" maxlength="4" pattern="[A-Z]{1}[0-9]{3}"
-                   title="1 chữ cái và 3 số" required>
+        <label><span>Số học viên *:</span>
+            <input id="StudyNumber" type="text" name="number" placeholder="XXXX000000" maxlength="10" pattern="[A-Z]{4}[0-9]{6}"
+                   title="1 chữ cái và 3 số" required onkeyup="NumberInput();">
+            <label id="numCheck"></label>
         </label>
     </p>
     <p>
-        <label><span>Họ và tên:</span>
+        <label><span>Họ và tên *:</span>
             <input id="StudyName" type="text" name="name" placeholder="Username" maxlength="30" required>
         </label>
     </p>
     <p>
-        <label><span>Mật khẩu:</span>
+        <label><span>Mật khẩu *:</span>
             <input id="StudyPass" type="password" name="password" maxlength="20" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,20}"
-                   title="Nhập mật khẩu gồm chữ in hoa và số!" required>
+                   title="Nhập mật khẩu gồm chữ in hoa và số!" required onkeyup="PasswordInput();">
         </label>
+        <label id="passCheck"></label>
     </p>
     <p>
-        <label><span>Email：</span>
+        <label><span>Email *：</span>
             <input id="StudyEmail" type="email" name="email" maxlength="30" placeholder="aaa@bbbb.com"
                    title="aaaa@bbbb.com"required>
         </label>
@@ -40,28 +42,28 @@
         <label>
             <span>Giới tính</span>
             <span class="radio">
-                    <label><input required checked name="gender" type="radio" value="Nam">Nam</label>
-                    <label><input required name="gender" type="radio" value="Nữ">Nữ</label>
+                    <label><input id="Nam" required checked name="gender" type="radio" value="Nam">Nam</label>
+                    <label><input id="Nu" required name="gender" type="radio" value="Nữ">Nữ</label>
                 </span>
         </label>
     </p>
     <p>
         <label>
-            <span>Quốc gia:</span>
-            <select name="nationality" required>
-                <option value="vietnam">Việt Nam</option>
-                <option value="japan">Nhật Bản</option>
-                <option value="america">Mỹ</option>
-                <option value="thailand">Thái</option>
-                <option value="dailoan">Đài Loan</option>
-                <option value="trungquoc">Trung Quốc</option>
+            <span class="nation">Quốc gia:</span>
+            <select name="nationality" id="nationality" required>
+                <option value="Việt Nam">Việt Nam</option>
+                <option value="Nhật Bản">Nhật Bản</option>
+                <option value="Mỹ">Mỹ</option>
+                <option value="Thái Lan">Thái</option>
+                <option value="Đài Loan">Đài Loan</option>
+                <option value="Trung Quốc">Trung Quốc</option>
             </select>
         </label>
     </p>
     <p>
         <label>
             <span>Ngày sinh:</span>
-            <input type="date" name="date"
+            <input id="birthday" type="date" name="date"
                    min="1970-04-01" max="2002-04-30" required>
         </label>
     </p>
@@ -78,10 +80,10 @@
                 </span>
         </label>
     </p>
-    <p>
-        <input type="submit" value="submit" onclick="getLocal();">
-        <input type="reset" value="reset">
-    </p>
+    <div>
+        <input type="submit" value="Submit" onclick="getLocal();">
+        <input type="reset" value="Reset">
+    </div>
 </form>
 </body>
 </html>
