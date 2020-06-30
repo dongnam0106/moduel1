@@ -77,8 +77,14 @@ form p span.radio label input{
 }
 
 form p span.radio label:hover{
-    background: #C08B9B;
-    color: #fff;
+    color: black;
+    font-weight: bold;
+}
+
+body p [type="button"]:hover,
+form div [type="submit"]:hover,
+form div [type="reset"]:hover{
+    color: black;
     font-weight: bold;
 }
 
