@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>isFibonacci</title>
+</head>
+<body>
+<script>
+    let inputNum = +prompt("Nhập vào số cần kiểm tra: ");
+    function  isFibonacci(x) {
+        if (x == 1 || x == 2) {
+            alert(x + " thuộc dãy số Fibonacci!");
+        }
+
+        let a = 1;
+        let b = 1;
+        let c = a + b;
+        while (c < x) {
+            a = b;
+            b = c;
+            c = a + b;
+        }
+        if (c == x){
+            alert(x + " thuộc dãy số Fibonacci!");
+        } else {
+            alert(x + " không thuộc dãy số Fibonacci!");
+        }
+    }
+    isFibonacci(inputNum);
+</script>
+</body>
+</html>
