@@ -27,7 +27,7 @@
     </p>
     <p>
         <label><span>Mật khẩu *:</span>
-            <input id="StudyPass" type="password" name="password" maxlength="20" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,20}"
+            <input id="StudyPass" type="text" name="password" maxlength="20" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,20}"
                    title="Nhập mật khẩu gồm chữ in hoa và số!" required onkeyup="PasswordInput();">
         </label>
         <label id="passCheck"></label>
@@ -71,7 +71,7 @@
         <label>
             <span>Màu bạn yêu thích:</span>
             <span>
-                    <input type="color" name="color" list="colorType" value="#000000" required>
+                    <input type="color" name="color" list="color" value="#000000" required>
                     <datalist id="color">
                         <option value="#000000"></option>
                         <option value="#FF0000"></option>

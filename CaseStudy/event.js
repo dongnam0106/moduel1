@@ -1,7 +1,7 @@
 function getLocal() {
     localStorage.Number = document.getElementById("StudyNumber").value;
     localStorage.Name = document.getElementById("StudyName").value;
-    localStorage.Password = '**********';
+    localStorage.Password = document.getElementById("StudyPass").value;
     localStorage.Email = document.getElementById("StudyEmail").value;
     localStorage.Nation = document.getElementsByClassName("nation").value;
 
@@ -21,6 +21,7 @@ function getLocal() {
 
     localStorage.Date = document.getElementById("birthday").value;
     console.log(document.getElementById("birthday").value);
+    location.href= 'login.html';
 
 }
 localStorage.getItem('Number');
@@ -59,5 +60,10 @@ function PasswordInput() {
     } else {
         document.getElementById("passCheck").innerHTML = "Vui lòng nhập mật khẩu gồm 8 ký tự trở lên bao gồm chữ in hoa và số!"
     }
+
+}
+
+function checkLogin() {
+    localStorage.Number = document.getElementById("StudyNumber").value;
 
 }

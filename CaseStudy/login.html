@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
+<html>
+<header>
+    <meta charset="UTF-8" />
+    <h1>[CODEGYM]_C0520K1</h1>
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+    <title>Login</title>
+    <script src="event.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</header>
+
 <body>
-$END$
+<p align="right">
+    <input type="button" value="Back" id="b1" onclick="history.back()">
+    <input type="button" value="Create" id="b2" onclick="location.href= 'form.html'">
+</p>
+<form>
+    <p>
+        <label><span>Số học viên:</span>
+            <input id="StudyNumber" type="text" name="number" placeholder="XXXX000000"
+                   onkeyup="NumberInput();" maxlength="10" pattern="[A-Z]{4}[0-9]{6}" required>
+        </label>
+        <label id="numCheck"></label>
+    </p>
+    <p>
+        <label><span>Mật khẩu:</span>
+            <input id="StudyPass" type="password" name="password"
+                   required onkeyup="PasswordInput();" maxlength="20" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,20}"
+                   title="Nhập mật khẩu gồm chữ in hoa và số!">
+        </label>
+        <label id="passCheck"></label>
+    </p>
+    <div>
+        <input type="submit" value="Login" onclick="checkLogin();">
+        <input type="reset" value="Reset">
+    </div>
+</form>
 </body>
+
 </html>
